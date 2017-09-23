@@ -1,10 +1,4 @@
-const firstName = 'Hovhannes';
-const lastName = 'Zohrabyan';
-const testString = 'HelloPeople';
-
-
 function numberOperator(num1 , num2 , num3) {
-    //TODO Rename function
     const result = num1 + num2 + num3;
     return result;
 }
@@ -18,23 +12,38 @@ function fullName(firstName , lastName) {
     return result;
 }
 
-function returnLongest(firstName , lastName , testString) {
+function returnLongest(firstString , secondString , thirdString) {
 
-    const firstStringLenght = firstName.length;
-    const secondStringLenght = lastName.length;
-    const thirdStringLenght = testString.length;
+    const firstStringLenght = firstString.length;
+    const secondStringLenght = secondString.length;
+    const thirdStringLenght = thirdString.length;
 
-    const maxLenght = firstStringLenght;
-    
+    /*
+    In Case if Var Was allowed
+    var maxLenght = firstStringLenght;
+
     if(secondStringLenght > maxLenght){
-        return secondStringLenght;
+        maxLenght = secondStringLenght;
     }
     else if(thirdStringLenght > maxLenght){
-        return secondStringLenght;
+        maxLenght = thirdStringLenght;
     }
-    else {
-        return maxLenght;
-    }
+
+    return maxLenght;
+    */
+
+   if (firstStringLenght > secondStringLenght && firstStringLenght> thirdStringLenght){
+       const result = 'The longest string  is "' + firstString + '" And it contains "' + firstStringLenght + '" characters';
+       return result;
+   }
+   else if (secondStringLenght > thirdStringLenght && secondStringLenght>firstStringLenght){
+       const result = 'The longest string  is "' + secondString + '" And it contains "' + secondStringLenght + '" characters';
+       return result;
+   }
+   else{
+       const result = 'The longest string  is "' + thirdString + '" And it contains "' + thirdStringLenght + '" characters';
+       return result;
+   }
 }
 
 function compareNumbers(num1 , num2){
@@ -53,7 +62,7 @@ function firstTrueStatement(statement1 , statement2 , statement3){
     if (statement1){
         return statement1;
     }
-    else if (statement2){
+    else if (statement2) {
         return statement2;
     }
     else if (statement3){
